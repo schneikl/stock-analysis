@@ -1,29 +1,17 @@
-# Election Audit Analysis 
+## Results 2017 vs 2018
+Evaluating the stock results from 2017 and 2018, we can see that DQ is not a good choice to put all your funds into. While DQ led the way in Return % with 199.4% in 2017, the low trade volume may have led to an inflated value, resulting in a 62.4% decline in 2018. When considering other green energy stocks, TERP is the only one evaluated that declined in both 2017 and 2018, and as such should not likely be in consideration. ENPH, on the other hand, is the only stock to grow yearly returns in both years, and should lead the way when looking for other stocks to invest in rather than DQ.
 
-## Project Overview
-The purpose of this project is to create a python script that reads election votes by candidate for each county, and then outputs a python script and text file summarizing the results. Ultimately, I evaluated the total number of votes that were cast, the total votes and percentage by county, while then highlighting the county with the most votes. Additionally, to then determine the election winner I calculated the votes and vote percentage by candidate, and declared the winner, highlighting their votes and percentage.
-
-## Results of Election
-Evaluating election results, we found the following results:
-
-*Winner: Diana DeGette
-    *Winning Vote Count: 272,892
-    *Winning Percentage: 73.8%
-    
-*Largest County Voter Turnout: Denver
-    *Voter Turnout: 306,055
-    
-*Total Election Voter Turnout: 369,711
-
-![Election_Analysis](election_analysis.PNG) 
+![VBA Challenge 2017](VBA_Challenge_2017.PNG) ![VBA Challenge 2018](VBA_Challenge_2018.PNG)
 
 ---
 
-## Summary of Audit
-This python analysis can be used for any election, with a couple considerations to be made. First, we are reading results from a 3 column csv file, so similar elections by county could use this same python file, however if you wanted to include other geographical or political attributes we would need to edit the code to include those variables, for example adding state and political party we'd need to add those to be accounted for in the code and perhaps determine votes by party by state or county.
+## Summary of Refactoring
+Refactoring code in general can significantly speed up run time, and also may simplify the code for easier future user understanding. By using fewer lines of code or by introducing variables or arrays that can limit duplicate looping, you can process the code much faster. While refactoring can save time, it is worth considering how often you'll be using the code and if the effort to refactor really matters. In the case of the VBA challenge, if we are only running this once per year, saving 1 second on run time is likely not a good reason to spend hours refactoring if the original code works.
 
-Additionally, if we wanted to dig deeper and see how each candidate performed in each county, we could adjust the code to see that level of granularity and better understand where a candidate has the most/least support.
+As you see below, before being refactored the challenge code processed significantly slower (relative to the refactored times above). By introducing the tickerIndex and arrays, we declare everything we needed on one loop through the data rather than continuous loops for every ticker as previously done. Ultimately we didn't significantly reduce the code lines, or necessarily make the code much easier to understand for a new user or after not using the code for a while, but should we expand the use of this code to all stocks outside of green energy, the added efficiency would likely be useful.
+
+![VBA 2017](VBA_2017_Before.PNG) ![VBA 2018](VBA_2018_Before.PNG)
 
 ```bash
-Kyle Schneider, 9/20/2020
+Kyle Schneider, 9/13/2020
 ```
